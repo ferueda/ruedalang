@@ -6,8 +6,22 @@ Rueda
 [![GoDoc](https://godoc.org/github.com/ferueda/rueda?status.svg)](http://godoc.org/github.com/ferueda/rueda)
 [![Test Status](https://github.com/ferueda/rueda/workflows/tests/badge.svg)](https://github.com/ferueda/rueda/actions?query=workflow%3Atests)
 
-This repository contains an interpreter for the "Rueda" programming language.
+>  Without a compiler or an interpreter, a programming language is nothing more than an idea or a specification. - Thorsten Ball
 
+
+This repository contains an interpreter for the Rueda programming language.
+
+## Features
+
+- C-family syntax
+- Variable bindings
+- Integers and booleans
+- Arithmetic expressions
+- Built-in first-class functions
+- Closures
+- Strings
+- Arrays
+- Hash maps
 ## Installation
 
 ## Usage
