@@ -34,13 +34,13 @@ func TestNewToken(t *testing.T) {
 	}
 }
 
-func TestLookupIdentifier(t *testing.T) {
+func TestLookup(t *testing.T) {
 	for key, val := range keywords {
-		if LookupIdentifier(string(key)) != val {
+		if Lookup(string(key)) != val {
 			t.Errorf("Lookup of %s failed", key)
 		}
 
-		if LookupIdentifier(strings.ToUpper(string(key))) != IDENT {
+		if Lookup(strings.ToUpper(string(key))) != IDENT {
 			t.Errorf("Lookup of %s failed", key)
 		}
 	}
