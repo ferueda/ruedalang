@@ -1,16 +1,30 @@
-// Package token contains constants which are used by the lexer
+// Package token defines constants representing the lexical tokens of the Rueda
+// programming language and basic operations on them.
 package token
 
-// Pre-defined TokenTypes
+type TokenType string
+
+// Pre-defined list of tokens.
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
+
 	// Identifiers + literals
 	IDENT = "IDENT" // add, foobar, x, y, ...
 	INT   = "INT"
+
 	// Operators
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
+	LT       = "<"
+	GT       = ">"
+	EQ       = "=="
+	NOT_EQ   = "!="
+
 	// Delimiters
 	COMMA     = ","
 	SEMICOLON = ";"
@@ -18,12 +32,27 @@ const (
 	RPAREN    = ")"
 	LBRACE    = "{"
 	RBRACE    = "}"
+
 	// Keywords
 	FUNCTION = "FUNCTION"
 	VAR      = "VAR"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
 )
 
-type TokenType string
+// Reserved keywords.
+var keywords = map[string]TokenType{
+	"fn":     FUNCTION,
+	"var":    VAR,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
+}
 
 // Token struct represents the lexer token.
 type Token struct {
@@ -36,15 +65,15 @@ func NewToken(tokenType TokenType, ch byte) Token {
 	return Token{Type: tokenType, Literal: string(ch)}
 }
 
-// Reserved keywords.
-var keywords = map[string]TokenType{
-	"fn":  FUNCTION,
-	"var": VAR,
+// IsKeyword reports whether name is keyword, such as "fn" or "var".
+func IsKeyword(name string) bool {
+	_, ok := keywords[name]
+	return ok
 }
 
-// LookupIdentifier used to determinate whether identifier is keyword nor not.
-func LookupIdentifier(identifier string) TokenType {
-	if tok, ok := keywords[identifier]; ok {
+// Lookup maps an identifier to its keyword token or IDENT.
+func Lookup(ident string) TokenType {
+	if tok, is_keyword := keywords[ident]; is_keyword {
 		return tok
 	}
 	return IDENT
