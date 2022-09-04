@@ -1,3 +1,3 @@
-module github.com/ferueda/rueda
+module github.com/ferueda/ruedalang
 
 go 1.18

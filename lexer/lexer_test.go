@@ -3,7 +3,7 @@ package lexer
 import (
 	"testing"
 
-	"github.com/ferueda/rueda/token"
+	"github.com/ferueda/ruedalang/token"
 )
 
 func TestNextToken(t *testing.T) {

@@ -4,7 +4,7 @@
 package lexer
 
 import (
-	"github.com/ferueda/rueda/token"
+	"github.com/ferueda/ruedalang/token"
 )
 
 // Lexer contains the lexer's internal state while processing a given
