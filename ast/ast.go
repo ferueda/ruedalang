@@ -36,16 +36,17 @@ func (p *Program) TokenLiteral() string {
 // A statement is represented by a tree consisting of one
 // or more of the following concrete statement nodes.
 
-// An VarStatement node represents a variable bnding (var).
+// A VarStatement node represents a variable binding statement (var).
 type VarStatement struct {
 	Token token.Token
 	Name  *Identifier
 	Value Expression
 }
 
-func (as *VarStatement) statementNode()       {}
-func (as *VarStatement) TokenLiteral() string { return as.Token.Literal }
+func (vs *VarStatement) statementNode()       {}
+func (vs *VarStatement) TokenLiteral() string { return vs.Token.Literal }
 
+// An Identifier node represents an IDENT statement.
 type Identifier struct {
 	Token token.Token
 	Value string
@@ -53,3 +54,12 @@ type Identifier struct {
 
 func (i *Identifier) expressionNode()      {}
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
+
+// A ReturnStatement node represents a return statement.
+type ReturnStatement struct {
+	Token       token.Token
+	ReturnValue Expression
+}
+
+func (rs *ReturnStatement) statementNode()       {}
+func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
