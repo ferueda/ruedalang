@@ -6,7 +6,7 @@ Ruedalang
 [![GoDoc](https://godoc.org/github.com/ferueda/ruedalang?status.svg)](http://godoc.org/github.com/ferueda/ruedalang)
 [![Test Status](https://github.com/ferueda/ruedalang/workflows/tests/badge.svg)](https://github.com/ferueda/ruedalang/actions?query=workflow%3Atests)
 
->  "If you don’t know how compilers work, then you don’t know how computers work. If you’re not 100% sure whether you know how compilers work, then you don’t know how they work." - [Steve Yegge](https://steve-yegge.medium.com/)
+>  "If you don’t know how compilers work, then you don’t know how computers work. If you’re not 100% sure whether you know how compilers work, then you don’t know how they work." - [Steve Yegge](http://steve-yegge.blogspot.com/2007/06/rich-programmer-food.html)
 
 >  "Without a compiler or an interpreter, a programming language is nothing more than an idea or a specification." - [Thorsten Ball](https://thorstenball.com/)
 
