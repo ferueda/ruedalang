@@ -1,4 +1,4 @@
-// Package token defines constants representing the lexical tokens of the Rueda
+// Package token defines constants representing the lexical tokens of the Ruedalang
 // programming language and basic operations on them.
 package token
 

@@ -1,3 +1,5 @@
+// Package repl implements a REPL (read-eval-print-loop) that
+// takes single user Ruedalang source inputs, executes them and returns the result.
 package repl
 
 import (

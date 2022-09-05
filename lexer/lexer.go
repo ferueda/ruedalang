@@ -1,4 +1,4 @@
-// Package lexer implements a lexer for Rueda source text.
+// Package lexer implements a lexer for Ruedalang source text.
 // It takes an input string as source and then tokenizes it
 // through repeated calls to the NextToken method.
 package lexer
