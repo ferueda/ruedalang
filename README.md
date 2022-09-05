@@ -29,3 +29,10 @@ This repository contains an interpreter for the Ruedalang programming language.
 
 This library is distributed under the MIT License found in the [LICENSE](./LICENSE)
 file.
+
+## References ##
+
+- https://github.com/golang/go
+- http://craftinginterpreters.com/
+- https://interpreterbook.com/
+- https://compilerbook.com/
