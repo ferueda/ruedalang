@@ -34,7 +34,7 @@ file.
 
 ## References ##
 
-- https://github.com/golang/go
+- https://github.com/golang/go/tree/master/src/go
 - http://craftinginterpreters.com/
 - https://interpreterbook.com/
 - https://compilerbook.com/

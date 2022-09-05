@@ -13,6 +13,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Hello %s! This is the Rueda programming language\n", user.Username)
+	fmt.Printf("Hello %s! This is the Ruedalang programming language\n", user.Username)
 	repl.Start(os.Stdin, os.Stdout)
 }

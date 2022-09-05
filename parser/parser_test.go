@@ -25,11 +25,11 @@ func TestVarStatements(t *testing.T) {
 		t.Fatalf("ParseProgram() returned nil")
 	}
 	if len(program.Statements) != 3 {
-		t.Fatalf("program.Statements does not contain 3 statements. Got=%d", len(program.Statements))
+		t.Fatalf("program.Statements does not contain 3 statements. got=%d", len(program.Statements))
 	}
 
 	testTable := []struct {
-		expecttedIdent string
+		expectedIdent string
 	}{
 		{"x"},
 		{"y"},
@@ -38,7 +38,7 @@ func TestVarStatements(t *testing.T) {
 
 	for i, tt := range testTable {
 		stmt := program.Statements[i]
-		if !testVarStatement(t, stmt, tt.expecttedIdent) {
+		if !testVarStatement(t, stmt, tt.expectedIdent) {
 			return
 		}
 	}
