@@ -10,6 +10,25 @@ import (
 	"github.com/ferueda/ruedalang/token"
 )
 
+// Prefix Parse function.
+// Infix parse function.
+type (
+	prefixParseFn func() ast.Expression
+	infixParseFn  func(ast.Expression) ast.Expression
+)
+
+// Precedence order.
+const (
+	_ int = iota
+	LOWEST
+	EQUALS      // ==
+	LESSGREATER // > or <
+	SUM         // +
+	PRODUCT     // *
+	PREFIX      // -X or !X
+	CALL        // myFunction(X)
+)
+
 // The parser structure holds the parser's internal state.
 type Parser struct {
 	errors []string
@@ -18,8 +37,12 @@ type Parser struct {
 
 	curToken  token.Token
 	peekToken token.Token
+
+	prefixParseFns map[token.TokenType]prefixParseFn
+	infixParseFns  map[token.TokenType]infixParseFn
 }
 
+// NewParser returns a pointer to a new parser struct value.
 func NewParser(l *lexer.Lexer) *Parser {
 	p := Parser{
 		errors: []string{},
@@ -29,6 +52,9 @@ func NewParser(l *lexer.Lexer) *Parser {
 	// Read two tokens, so curToken and peekToken are both set
 	p.nextToken()
 	p.nextToken()
+
+	p.prefixParseFns = make(map[token.TokenType]prefixParseFn)
+	p.registerPrefix(token.IDENT, p.parseIdentifier)
 
 	return &p
 }
@@ -108,4 +134,12 @@ func (p *Parser) expectPeek(t token.TokenType) bool {
 		p.peekError(t)
 		return false
 	}
+}
+
+func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParseFn) {
+	p.prefixParseFns[tokenType] = fn
+}
+
+func (p *Parser) registerInfix(tokenType token.TokenType, fn infixParseFn) {
+	p.infixParseFns[tokenType] = fn
 }
