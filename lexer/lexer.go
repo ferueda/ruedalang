@@ -16,7 +16,7 @@ type Lexer struct {
 	ch      byte // current character
 }
 
-// NewLexer returns a new Lexer struct value from a string input.
+// NewLexer returns a pointer to a new Lexer struct value from a string input.
 // It also calls Lexer's readChar method once when initializing.
 func NewLexer(input string) *Lexer {
 	l := Lexer{input: input}
