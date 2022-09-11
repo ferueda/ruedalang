@@ -45,7 +45,7 @@ const (
 
 // Reserved keywords.
 var keywords = map[string]TokenType{
-	"fn":     FUNCTION,
+	"fun":    FUNCTION,
 	"var":    VAR,
 	"true":   TRUE,
 	"false":  FALSE,

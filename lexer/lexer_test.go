@@ -11,7 +11,7 @@ func TestNextToken(t *testing.T) {
 		var five = 5;
 		var ten = 10;
 
-		var add = fn(x, y) {
+		var add = fun(x, y) {
 			x + y;
 		};
 		var result = add(five, ten);
@@ -48,7 +48,7 @@ func TestNextToken(t *testing.T) {
 		{token.VAR, "var"},
 		{token.IDENT, "add"},
 		{token.ASSIGN, "="},
-		{token.FUNCTION, "fn"},
+		{token.FUNCTION, "fun"},
 		{token.LPAREN, "("},
 		{token.IDENT, "x"},
 		{token.COMMA, ","},
