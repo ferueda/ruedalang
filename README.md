@@ -4,7 +4,7 @@ Ruedalang
 
 [![go-github release (latest SemVer)](https://img.shields.io/github/v/release/ferueda/ruedalang?sort=semver)](https://github.com/ferueda/ruedalang/releases)
 [![GoDoc](https://godoc.org/github.com/ferueda/ruedalang?status.svg)](http://godoc.org/github.com/ferueda/ruedalang)
-[![Test Status](https://img.shields.io/github/workflow/status/ferueda/ruedalang/tests?label=tests)](https://github.com/ferueda/ruedalang/actions?query=workflow%3Atests)
+[![Test Status](https://github.com/ferueda/ruedalang/workflows/tests/badge.svg)](https://github.com/ferueda/ruedalang/actions?query=workflow%3Atests)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ferueda/ruedalang)](https://goreportcard.com/report/github.com/ferueda/ruedalang)
 
 
